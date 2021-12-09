@@ -13,98 +13,109 @@ function writePassword() {
   //    lowerCase: ;
   //    specialChar: ;
   //  }
+  //Choose vars for our criteria types: UC LC num special to put in arrays.
+  var upperCaseOptions = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var lowerCasepOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  var numbersOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  var specialCharOptions = ["!", "#", "$", "%", "&", "'", "(", ")", "*", '"', "+", ",", "-", "/", ":",];
 
+
+  //We need a way to get a random index selector from our passwordLength var
+  //This will be our Random index selector
+  var index = Math.floor(Math.random()* options.combined array length)
+
+  //We need a way to determine which arrays will be selected to combine based off of the boolean values we collected from our user input. Use conditioinal Statement
+
+  //We need a way to combine all of our selected arrays so that we can use our random index selector to choose values
+
+  //We need a way to display the output to the window
 
 }
 
 function generatePassword() {
 
-  //This function will allow us to set the acceptable range for our passwordLength
-  // function range(start, end) {
-  //   return Array(end - start + 1).fill().map((_, idx) => start + idx)
-  // }
-  // var validPWLength = range(8, 128);
-  // console.log();
-
-  //Choose vars for our criteria types: UC LC num special to put in arrays.
-  var upperCase = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-  var lowerCase = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  var numbers = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  var specialChar = ["!", "#", "$", "%", "&", "'", "(", ")", "*", '"', "+", ",", "-", "/", ":",];
-
-
-
+  //Start the Generator with a Welcome Message
   console.log(window.confirm("Welcome to the Javascript Password Generator! Choose from a group of criteria to be included in your new Password. Click OK to continue!"));
-  
-function selectUpperCase() {
+
+  //Select Y/N for upper case letters
+  function selectUpperCase() {
     var upperCase = confirm("Would you like to use Upper Case Letters in your Password?");
     console.log(upperCase);
-    // alert("You have selected Yes");
-    // if (upperCase === "y") {
-    //   window.alert("You have chosen Yes to include Upper Case Letters.");
-    // } else {
-    //   alert("You have chosen No to NOT include Upper Case Letters in your password.");
-    // }
+    if (!upperCase) {
+      alert("You have selected No upper case letters");
+    } else {
+      alert("You have selected Yes to upper case letters");
+    }
   }
+  //Call above function
   selectUpperCase();
+
+  //Select Y/N for lower case letters
   function selectLowerCase() {
     var lowerCase = confirm("Would you like to use Lower Case Letters in your Password Y/N?");
     console.log(lowerCase);
-    // alert("You have selected Yes");
-    // if (lowerCase === "y") {
-    //   window.alert("You have chosen Yes to include Lower Case Letters.");
-    // } else {
-    //   alert("You have chosen No to NOT include Lower Case Letters in your password.");
-    // }
+    if (!lowerCase) {
+      alert("You have selected No lower case letters");
+    } else {
+      alert("You have selected Yes to lower case letters");
+    }
+    
   }
+  //Call above function
   selectLowerCase();
+
+  //Select Y/N for numbers
   function selectNumbers() {
     var numbers = confirm("Would you like to use numbers in your Password Y/N?");
     console.log(numbers);
-    // alert("You have selected Yes");
-    // if (upperCase === "y") {
-    //   window.alert("You have chosen Yes to include numbers in your password.");
-    // } else {
-    //   alert("You have chosen No to NOT include numbers in your password.");
-    // }
+    if (!numbers) {
+      alert("You have selected No Numbers");
+    } else {
+      alert("You have selected Yes to Numbers");
+    }
   }
+  //Call above function
   selectNumbers();
+
+  //Select Y/N for specialCharacters
   function selectSpecialChar() {
     var specialChar = confirm("Would you like to use Special Characters in your Password Y/N?");
     console.log(specialChar);
-
-    // alert("You have selected Yes");
-    //   if (specialChar === "y") {
-    //     window.alert("You have chosen Yes to include Special Characters.");
-    //   } else {
-    //     alert("You have chosen No to NOT include Special Characters in your password.");
-    //   }
-    // }
-    selectSpecialChar();
-    function getPasswordLength() {
-      var passwordLength = prompt("Please select a password length between 8 and 128");
-      console.log(passwordLength);
-      if (passwordLength >= 8 && passwordLength <= 128) {
-        window.alert("You have selected a password length of " + passwordLength);
-      } else {
-        alert("Your selection is not a number between 8 and 128, please try again.");
-        return getPasswordLength();
-      }
+    if (!specialChar) {
+      alert("You have selected No special characters");
+    } else {
+      alert("You have selected Yes to special characters");
     }
-    getPasswordLength();
-
-
-
-
-
-
-
-
-
-
-
-
   }
+  //Call above function
+  selectSpecialChar();
+
+  //Select character length for password
+  function getPasswordLength() {
+    var passwordLength = prompt("Please select a password length between 8 and 128");
+    console.log(passwordLength);
+    if (passwordLength >= 8 && passwordLength <= 128) {
+      window.alert("You have selected a password length of " + passwordLength);
+    } else {
+      alert("Your selection is not a number between 8 and 128, please try again.");
+      return getPasswordLength();
+    }
+  }
+  //Call above function
+  getPasswordLength();
+
+  
+
+
+
+
+
+
+
+
+
+
+
 
 }
 // Add event listener to generate button
