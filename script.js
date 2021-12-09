@@ -27,11 +27,15 @@ function writePassword() {
     console.log(combinedArray);
   }
 
+  //selecting array items based on boolean values
+  var arrayItems = [ true ? []]
+
   //We need a way to get a random index selector from our passwordLength var
   //This will be our Random index selector
   var index = Math.floor(Math.random() * combinedArray.length);
 
   //We need a way to determine which arrays will be selected to combine based off of the boolean values we collected from our user input. Use conditioinal Statement
+  //use typeof method NO use Array.sort?
 
   //We need a way to combine all of our selected arrays so that we can use our random index selector to choose values (Concat).push?
 
