@@ -27,7 +27,7 @@ function generatePassword() {
             alert("You have selected Yes to upper case letters");
         }
         //We need to make sure our types are valid (if conditional??--> if (condition){then})
-        if (selectedUpper) {
+        if (selectedUpper === true) {
             selected = upper;
         }
     }
@@ -44,7 +44,7 @@ function generatePassword() {
             alert("You have selected Yes to lower case letters");
         }
         //We need to make sure our types are valid (if conditional??--> if (condition){then})
-        if (selectedLower) {
+        if (selectedLower === true) {
             selected = lower;
         }
     }
@@ -61,7 +61,7 @@ function generatePassword() {
             alert("You have selected Yes to Numbers");
         }
         //We need to make sure our types are valid (if conditional??--> if (condition){then})
-        if (selectedNum) {
+        if (selectedNum === true) {
             selected = num;
         }
     }
@@ -78,7 +78,7 @@ function generatePassword() {
             alert("You have selected Yes to special characters");
         }
         //We need to make sure our types are valid (if conditional??--> if (condition){then})
-        if (selectedSpecial) {
+        if (selectedSpecial === true) {
             selected = special;
         }
     }
@@ -104,6 +104,8 @@ function generatePassword() {
     for (var i = 0; i < passwordLength; i++) {
         console.log(passwordLength);
     }
+
+    // We need our result of all of this to be our password which is equal to our function generatePassword()?? function gPW()-->password-->pwText.value-->display in html
 
 
     // Write password to the #password input
