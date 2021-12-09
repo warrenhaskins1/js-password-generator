@@ -14,19 +14,27 @@ function writePassword() {
   //    specialChar: ;
   //  }
   //Choose vars for our criteria types: UC LC num special to put in arrays.
-  var upperCaseOptions = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
-  var lowerCasepOptions = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
-  var numbersOptions = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
-  var specialCharOptions = ["!", "#", "$", "%", "&", "'", "(", ")", "*", '"', "+", ",", "-", "/", ":",];
+  var upperArray = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+  var lowerArray = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+  var numArray = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+  var specialCharArray = ["!", "#", "$", "%", "&", "'", "(", ")", "*", '"', "+", ",", "-", "/", ":",];
 
+  var combinedArray = []
+
+  if (conditions) {
+
+    combinedArray.push(upperArray, lowerArray, numArray, specialCharArray)
+    console.log(combinedArray);
+  }
 
   //We need a way to get a random index selector from our passwordLength var
   //This will be our Random index selector
-  var index = Math.floor(Math.random()* options.combined array length)
+  var index = Math.floor(Math.random() * combinedArray.length);
 
   //We need a way to determine which arrays will be selected to combine based off of the boolean values we collected from our user input. Use conditioinal Statement
 
-  //We need a way to combine all of our selected arrays so that we can use our random index selector to choose values
+  //We need a way to combine all of our selected arrays so that we can use our random index selector to choose values (Concat).push?
+
 
   //We need a way to display the output to the window
 
@@ -59,7 +67,7 @@ function generatePassword() {
     } else {
       alert("You have selected Yes to lower case letters");
     }
-    
+
   }
   //Call above function
   selectLowerCase();
@@ -104,7 +112,7 @@ function generatePassword() {
   //Call above function
   getPasswordLength();
 
-  
+
 
 
 
