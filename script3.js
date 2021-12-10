@@ -4,12 +4,24 @@ var generateBtn = document.querySelector("#generate");
 
 
 function generatePassword() {
-    //Get vars for our char types
+    Get vars for our char types
     var upper = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
     var lower = "abcdefghijklmnopqrstuvwxyz";
     var num = "0123456789";
     var special = "~`!@#$%^&*()+?";
+    //Need to store our boolean values for user char choice
     var selected = " ";
+    //Need password
+    var password = " ";
+
+    var upper = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+    var lower = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+    var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+    var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", '"', "+", ",", "-", "/", ":",];
+    //Need to store our boolean values for user char choice
+    var selected = [];
+    //Need password
+    var password = [];
 
 
     //We need to convert array to num for pwLength??
@@ -28,7 +40,7 @@ function generatePassword() {
         }
         //We need to make sure our types are valid (if conditional??--> if (condition){then})
         if (selectedUpper === true) {
-            selected = upper;
+            selected += upper;
         }
     }
     //Call above function
@@ -45,7 +57,7 @@ function generatePassword() {
         }
         //We need to make sure our types are valid (if conditional??--> if (condition){then})
         if (selectedLower === true) {
-            selected = lower;
+            selected += lower;
         }
     }
     //Call above function
@@ -62,7 +74,7 @@ function generatePassword() {
         }
         //We need to make sure our types are valid (if conditional??--> if (condition){then})
         if (selectedNum === true) {
-            selected = num;
+            selected += num;
         }
     }
     //Call above function
@@ -79,7 +91,7 @@ function generatePassword() {
         }
         //We need to make sure our types are valid (if conditional??--> if (condition){then})
         if (selectedSpecial === true) {
-            selected = special;
+            selected += special;
         }
     }
     //Call above function
@@ -98,11 +110,13 @@ function generatePassword() {
     }
     //Call above function
     getPasswordLength();
+    console.log(selected.length)
 
 
     //We need to loop through random char that we get from user confirm and to the users selected pwLength. Use for iteration (i=0;<length;i++) and Math.Random from PRS.
     for (var i = 0; i < passwordLength; i++) {
-        console.log(passwordLength);
+        Math.floor(Math.random() * passwordLength);
+        
     }
 
     // We need our result of all of this to be our password which is equal to our function generatePassword()?? function gPW()-->password-->pwText.value-->display in html

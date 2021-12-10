@@ -1,48 +1,100 @@
-// The password can include special characters. If you’re unfamiliar with these, see this [list of password special characters](https://www.owasp.org/index.php/Password_special_characters) from the OWASP Foundation.
+// Assignment Code
+var generateBtn = document.querySelector("#generate");
 
-// ## User Story
+//Arrays
 
-// ```
-// AS AN employee with access to sensitive data
-// I WANT to randomly generate a password that meets certain criteria
-// SO THAT I can create a strong password that provides greater security
-// ```
+var up = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z"];
+var low = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"];
+var num = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9];
+var special = ["!", "#", "$", "%", "&", "'", "(", ")", "*", '"', "+", ",", "-", "/", ":",];
+var comb = [];
 
-// ## Acceptance Criteri
 
-// ```
-// GIVEN I need a new, secure password
-// WHEN I click the button to generate a password
-// THEN I am presented with a series of prompts for password criteria
 
-Do we have a prompt/confirm? yes
+function selectUp() {
+    var selectedUp = confirm("Would you like to use Upper Case Letters in your Password?");
+    console.log(selectedUp);
+    if (!selectedUp) {
+        alert("You have selected No upper case letters");
+    }
+    selectUp();
+    function selectLow() {
+        var selectedLow = confirm("Would you like to use Lower Case Letters in your Password?");
+        console.log(selectedLow);
+        if (!selectedLow) {
+            alert("You have selected No lower case letters");
+        }
+        selectLow();
+        function selectNum() {
+            var selectedNum = confirm("Would you like to use Numbers in your Password?");
+            console.log(selectedNum);
+            if (!selectedNum) {
+                alert("You have selected No numbers");
+            }
+            selectNum();
+            function selectSpecial() {
+                var selectedSpecial = confirm("Would you like to use Special characters in your Password?");
+                console.log(selectedSpecial);
+                if (!selectedSpecial) {
+                    alert("You have selected No Special Characters");
+                }
+                selectSpecial();
 
-// WHEN prompted for password criteria
-// THEN I select which criteria to include in the password
+                if (selectedUp) {
+                    comb += up;
+                }
+                if (selectedLow) {
+                    comb += low;
+                }
+                if (selectedNum) {
+                    comb += num;
+                }
+                if (selectedSpecial) {
+                    comb += special;
+                }
 
-yes
+                function getPasswordLength() {
+                    var passwordLength = prompt("Please select a password length between 8 and 128");
+                    if (passwordLength >= 8 && passwordLength <= 128) {
+                        console.log(passwordLength);
+                        window.alert("You have selected a password length of " + passwordLength);
+                    } else {
+                        alert("Your selection is not a number between 8 and 128, please try again.");
+                        return getPasswordLength();
+                    }
+                }
+                //Call above function
+                getPasswordLength();
 
-// WHEN prompted for the length of the password
-// THEN I choose a length of at least 8 characters and no more than 128 characters
+                var comb = up.concat(low, num, special);
+                console.log(comb);
 
-yes
+                for (i =0; i < passwordLength; i++) {
+                    var randomArray = comb[Math.floor(passwordLength * Math.random())];
+                    console.log(randomArray);
 
-// WHEN asked for character types to include in the password
-// THEN I confirm whether or not to include lowercase, uppercase, numeric, and/or special characters
 
-yes
+                }
 
-// WHEN I answer each prompt
-// THEN my input should be validated and at least one character type should be selected
 
-No
 
-// WHEN all prompts are answered
-// THEN a password is generated that matches the selected criteria
 
-No
 
-// WHEN the password is generated
-// THEN the password is either displayed in an alert or written to the page
 
-No
+
+
+                // Write password to the #password input
+                function writePassword() {
+                    var password = generatePassword();
+                    var passwordText = document.querySelector("#password");
+
+                    passwordText.value = password;
+
+                }
+
+                // Add event listener to generate button
+                generateBtn.addEventListener("click", writePassword);
+            }
+        }
+    }
+}
