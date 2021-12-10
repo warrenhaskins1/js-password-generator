@@ -1,8 +1,10 @@
 # Javascript-Password-Generator-HW
 Using Javascript, we will build a Password Generator
 
-https://github.com/warrenhaskins1/js-password-generator
-https://warrenhaskins1.github.io/js-password-generator/
+- https://github.com/warrenhaskins1/js-password-generator
+
+- https://warrenhaskins1.github.io/js-password-generator/
+
 
 ## Description
 - This project was designed to teach us some fundamental basics of programming using
